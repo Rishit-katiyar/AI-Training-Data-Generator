@@ -15,8 +15,9 @@ AI Training Data Generator is a powerful script written in Lua that leverages th
 - **Pagination support**: Fetch multiple pages of images to create larger and more comprehensive datasets.
 - **Easily customizable and configurable**: Adjust parameters such as keyword, number of images per keyword, and download folder to suit your specific requirements.
 
-<img width="645" alt="image concept maybe working" src="https://github.com/Rishit-katiyar/AI-Training-Data-Generator/assets/167756997/da62efd9-9aab-4bc9-a559-124d2303f851">
-
+<div align="center">
+  <img width="645" alt="image concept maybe working" src="https://github.com/Rishit-katiyar/AI-Training-Data-Generator/assets/167756997/da62efd9-9aab-4bc9-a559-124d2303f851">
+</div>
 ## Installation
 
 To use the AI Training Data Generator, follow these steps:
