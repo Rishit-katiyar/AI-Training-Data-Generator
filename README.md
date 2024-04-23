@@ -1,4 +1,4 @@
-<img width="945" alt="image concept maybe working" src="https://github.com/Rishit-katiyar/AI-Training-Data-Generator/assets/167756997/da62efd9-9aab-4bc9-a559-124d2303f851"># AI Training Data Generator 🤖🖼️
+# AI Training Data Generator 🤖🖼️
 
 Welcome to the AI Training Data Generator repository! This tool assists in creating datasets for training AI models by fetching and organizing images from the web.
 
@@ -15,7 +15,7 @@ AI Training Data Generator is a powerful script written in Lua that leverages th
 - **Pagination support**: Fetch multiple pages of images to create larger and more comprehensive datasets.
 - **Easily customizable and configurable**: Adjust parameters such as keyword, number of images per keyword, and download folder to suit your specific requirements.
 
-![Uploading image concept maybe working.PNG…]()
+![Uploading image concept maybe working.PNG…](<img width="945" alt="image concept maybe working" src="https://github.com/Rishit-katiyar/AI-Training-Data-Generator/assets/167756997/da62efd9-9aab-4bc9-a559-124d2303f851">)
 
 ## Installation
 
