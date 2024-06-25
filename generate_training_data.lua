@@ -7,14 +7,17 @@ local lfs = require("lfs")
 local function search_images(keyword, per_page, client_id)
     local url = string.format("https://api.unsplash.com/search/photos?query=%s&per_page=%d", keyword, per_page)
     local headers = {
-        Authorization = "Client-ID " .. client_id
+        ["Authorization"] = "Client-ID " .. client_id
     }
-    local response, code, headers, status = http.request{
+    local response_body = {}
+    local res, code, response_headers, status = http.request{
         url = url,
-        headers = headers
+        headers = headers,
+        sink = ltn12.sink.table(response_body)
     }
     if code == 200 then
-        local data = json.decode(response)
+        local response_str = table.concat(response_body)
+        local data = json.decode(response_str)
         local image_urls = {}
         for _, photo in ipairs(data.results) do
             table.insert(image_urls, photo.urls.raw)
@@ -30,9 +33,14 @@ end
 local function download_image(url, folder)
     local filename = url:match("[^/]*$")
     local filepath = folder .. "/" .. filename
-    local response, code, headers, status = http.request{
+    local file = io.open(filepath, "wb")
+    if not file then
+        print(string.format("Error opening file for writing: %s", filepath))
+        return
+    end
+    local res, code, response_headers, status = http.request{
         url = url,
-        sink = ltn12.sink.file(io.open(filepath, "wb")),
+        sink = ltn12.sink.file(file),
         timeout = 30 -- Set a timeout of 30 seconds for each request
     }
     if code == 200 then
